@@ -1,4 +1,4 @@
-< !DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
@@ -23,11 +23,9 @@
                 padding: 0;
             }
 
-
             html {
                 font-size: 16px;
-                background-color: #e8e8e8;
-                /* off-white */
+                background-color: #e8e8e8; /* off-white */
                 color: #111827;
                 font-family: 'agrandir';
             }
@@ -46,6 +44,9 @@
                 min-height: 100vh;
                 display: grid;
                 place-content: center;
+                gap: 2rem;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
             }
 
             .card {
@@ -60,25 +61,26 @@
                 color: #f6f6f6;
                 width: 100%;
                 border-radius: 0.5rem 0.5rem 0 0;
+                min-height: 170px;
             }
 
             .background-image {
                 background-color: orange;
-                background-image: url("assets/images/sgtec.png");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
             }
 
-            .overlay {
+            .overlay { 
                 border-image: fill 0 linear-gradient(#0003, #000);
+                clip-path: inset(0% 0% 0% 0% round 0.5rem 0.5rem 0 0)
             }
 
             .flex-column {
                 display: flex;
                 flex-flow: column nowrap;
                 justify-content: space-between;
-                gap: 1rem;
+                /* gap: 1rem; */
             }
 
             .card-image-content {
@@ -97,9 +99,10 @@
                 flex-flow: column nowrap;
 
                 >.tag {
+                    align-self: flex-start;
                     width: fit-content;
                     padding: 0.5rem 1rem;
-                    background-color: hsl(308, 59%, 72%);
+                    background-color: orange;
                     font-weight: 700;
                     border-radius: 0.25rem;
                     font-size: .7rem;
@@ -146,14 +149,18 @@
     <body>
         <main class="wrapper">
             <section class="card flex-column">
-                <div class="card-image background-image overlay">
-                    <div class="card-image-content flex-column"><a class="image-expand" href="#"><span
-                                aria-hidden="true"><i
-                                    class="fa-solid fa-up-right-and-down-left-from-center"></i></span></a>
+                <div class="card-image background-image overlay" style="background-image: url('assets/images/sgtec.png');">
+                    <div class="card-image-content flex-column">
+                        <a class="image-expand" href="#">
+                            <span aria-hidden="true">
+                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                            </span>
+                        </a>
                         <h3>Painel de Monitoramento da Execução da Governança de TIC (SGTEC)</h3>
                     </div>
                 </div>
-                <main class="card-content"><span class="tag">Administrativo</span>
+                <main class="card-content">
+                    <span class="tag">Administrativo</span>
                     <p class="description">Painel para Monitoramento da Execução da Governança de TIC,
                         contendo valores de contratos,
                         contratações planejadas,
@@ -162,6 +169,25 @@
                             aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
                 </main>
             </section>
+
+            <section class="card flex-column">
+                <div class="card-image background-image overlay" style="background-image: url('assets/images/infograficoenergia.png');">
+                    <div class="card-image-content flex-column">
+                        <a class="image-expand" href="#">
+                            <span aria-hidden="true">
+                                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                            </span>
+                        </a>
+                        <h3>Infográfico Energia Elétrica (SGSUS)</h3>
+                    </div>
+                </div>
+                <main class="card-content">
+                    <span class="tag">1ª Instância</span>
+                    <p class="description">Apresentação gráfica dos indicadores relacionados ao consumo e gastos com energia elétrica no âmbito do
+                        TJRJ</p><a class="action" href="#">Acessar Painel <span
+                            aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+                </main>
+        </section>
         </main>
     </body>
 
